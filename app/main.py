@@ -3,7 +3,6 @@ from app.display import ConsoleDisplay, ReverseDisplay
 from app.printer import ConsolePrinter, ReversePrinter
 from app.serializer import JSONSerializer, XMLSerializer
 
-
 BOOK_PROCESSORS = {
     "display": {
         "console": ConsoleDisplay.display_content,
@@ -21,7 +20,6 @@ BOOK_PROCESSORS = {
 
 
 def main(book: Book, commands: list[tuple[str, str]]) -> None | str:
-
     for cmd, method_type in commands:
         try:
             process = BOOK_PROCESSORS[cmd][method_type]
